@@ -1,17 +1,29 @@
-'''
-Created on 09-May-2017
-
-@author: Sathesh Rgs
-'''
-print("Program to find the factorial of a number")
-try:
-    num=int(input("Enter a number..."))
-    fact=1
-    if num < 0:
-        print("Factorial can't be performed for negative numbers")
+import math
+def factorial(n):
+    if n == 0:
+        return 1
     else:
-        for i in range(1,num+1):
-            fact *= i
-    print("The factorial of",num,"is",fact)
-except:
-    print("Enter a valid number")
+        return n * factorial(n - 1)
+
+
+n = int(input("Input a number to compute the factiorial : "))
+print(factorial(n))
+
+"""
+Method 2:
+Here we are going to use in-built fuction for factorial which is provided by Python for
+user conveniance.
+
+Steps:
+     -For this you should import math module first
+     -and use factorial() method from math module
+     
+Note:
+    Appear error when pass a negative or fraction value in factorial() method, so plz refrain from this.
+
+Let's code it:
+"""
+if n>=0 :
+    print(math.factorial(n))
+else:
+    print("Value of n is inValid!")
